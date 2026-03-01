@@ -13,7 +13,7 @@ export const teamMember = defineType({
         }),
         defineField({
             name: 'role',
-            title: 'Role',
+            title: 'Role/Designation',
             type: 'string',
             validation: (Rule) => Rule.required(),
         }),
@@ -30,6 +30,15 @@ export const teamMember = defineType({
             name: 'bio',
             title: 'Bio',
             type: 'text',
+        }),
+        defineField({
+            name: 'socials',
+            title: 'Social Links',
+            type: 'object',
+            fields: [
+                { name: 'linkedin', title: 'LinkedIn', type: 'url' },
+                { name: 'twitter', title: 'Twitter', type: 'url' },
+            ],
         }),
         defineField({
             name: 'order',
